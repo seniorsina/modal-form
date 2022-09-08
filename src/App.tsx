@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Modal from "./component/Modal";
 
 function App() {
+  const [show, setShow] = useState(false);
+  //const [onClose, setClose] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button
+        onClick={() => {
+          setShow(true);
+        }}
+      >
+        show modal
+      </button>
+      <Modal onClose={() => setShow(false)} show={show}></Modal>
     </div>
   );
 }
