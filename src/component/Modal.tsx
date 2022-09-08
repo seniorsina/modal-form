@@ -1,17 +1,26 @@
+import React from "react";
 import { JsxTagNameExpression } from "typescript";
 import "../component/Modal.css";
 
 type ModalProps = {
   show?: Boolean;
   onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  OnClickBackground: (event: React.MouseEvent<HTMLDivElement>) => void;
 };
-const Modal = ({ show, onClose }: ModalProps) => {
+
+const Modal = ({ show, onClose, OnClickBackground }: ModalProps) => {
   if (!show) {
     return null;
   }
+
+  const CloseOnEscapeKeyDown = (e: React.KeyboardEvent) => {
+    if (e.charCode) {
+    }
+  };
+
   return (
-    <div className="modal">
-      <div className="modal-content">
+    <div className="modal" onClick={OnClickBackground}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h4 className="modal-title">title</h4>
         </div>

@@ -14,7 +14,11 @@ function App() {
       >
         show modal
       </button>
-      <Modal onClose={() => setShow(false)} show={show}></Modal>
+      <Modal
+        OnClickBackground={() => setShow(false)}
+        onClose={() => setShow(false)}
+        show={show}
+      ></Modal>
     </div>
   );
 }
