@@ -8,11 +8,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: visible;
 }
 
 .modal-content {
   width: 500px;
   background-color: aliceblue;
+  transform: translateY(-200px);
+  transition: all 0.3s ease-in-out;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
 }
 
 .modal-header .modal-footer {
@@ -27,4 +41,21 @@
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
+}
+
+.modal.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal.exit {
+  opacity: 0;
+}
+
+.modal.enter-done .modal-content {
+  transform: translateY(0);
+}
+
+.modal.modal.exit .modal-content {
+  transform: translate(-200px);
 }

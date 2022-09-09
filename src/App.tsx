@@ -14,7 +14,14 @@ function App() {
       >
         show modal
       </button>
-      <Modal onClose={() => setShow(false)} show={show}></Modal>
+      <Modal
+        title="Fuck you babe"
+        onBackgroundClick={() => setShow(false)}
+        onClose={() => setShow(false)}
+        show={show}
+      >
+        <p>thi is a fucking body</p>
+      </Modal>
     </div>
   );
 }
